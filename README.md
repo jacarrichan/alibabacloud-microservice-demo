@@ -94,3 +94,31 @@ If you are a collaborator, please read the [Collaborator](https://github.com/ali
 ### Credit
 
 This project is originiated from [GoogleCloudPlatform/microservice-demo](https://github.com/GoogleCloudPlatform/microservices-demo)
+
+
+```
+PS C:\Users\jacarrichan\temp\alibabacloud-microservice-demo> kubectl  get  svc
+NAME                    TYPE           CLUSTER-IP       EXTERNAL-IP   PORT(S)          AGE
+cart-redis              ClusterIP      10.100.10.212    <none>        6379/TCP         3m21s
+checkout-mysql          ClusterIP      10.104.129.23    <none>        3306/TCP         3m21s
+kubernetes              ClusterIP      10.96.0.1        <none>        443/TCP          8d
+nacos-server            ClusterIP      10.96.233.127    <none>        8848/TCP         3m20s
+nacos-server-external   LoadBalancer   10.109.223.142   localhost     8848:32383/TCP   3m20s
+product-mysql           ClusterIP      10.108.1.216     <none>        3306/TCP         3m20s
+zuul-gateway            ClusterIP      10.104.32.193    <none>        8080/TCP         3m20s
+zuul-gateway-external   LoadBalancer   10.97.71.194     localhost     8080:32465/TCP   3m20s
+
+PS C:\Users\jacarrichan\temp\alibabacloud-microservice-demo> kubectl get pods -o wide
+NAME                               READY   STATUS    RESTARTS        AGE     IP           NODE             NOMINATED NODE   READINESS GATES
+cart-redis-6db7968f49-9thrh        1/1     Running   0               3m47s   10.1.1.151   docker-desktop   <none>           <none>
+cartservice-867c967b78-r8pq2       1/1     Running   2 (2m26s ago)   3m47s   10.1.1.152   docker-desktop   <none>           <none>
+checkout-mysql-6466b58fb4-676nf    1/1     Running   0               3m47s   10.1.1.150   docker-desktop   <none>           <none>
+checkoutservice-57849b8d44-4kkb9   1/1     Running   1 (2m45s ago)   3m47s   10.1.1.154   docker-desktop   <none>           <none>
+frontend-7b7f8d9dc6-5nqst          1/1     Running   1 (2m52s ago)   3m47s   10.1.1.153   docker-desktop   <none>           <none>
+nacos-server-9cdb779f6-65bb8       1/1     Running   0               3m47s   10.1.1.155   docker-desktop   <none>           <none>
+product-mysql-5f9fcdbb94-nkdbn     1/1     Running   0               3m46s   10.1.1.157   docker-desktop   <none>           <none>
+productservice-648cb5dccc-wf5x4    1/1     Running   1 (2m45s ago)   3m46s   10.1.1.156   docker-desktop   <none>           <none>
+zuul-gateway-694b7f4984-h59p2      1/1     Running   0               3m46s   10.1.1.158   docker-desktop   <none>           <none>
+
+
+```
