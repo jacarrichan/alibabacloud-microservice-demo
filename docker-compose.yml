@@ -173,3 +173,17 @@ services:
 #      - spring.cloud.nacos.discovery.server-addr=nacos-server:8848
 #    depends_on:
 #      - "nacos"
+
+  zuul-gateway:
+    build: ./src/zuul-gateway
+    image: zuul-gateway:1.0.0-SNAPSHOT
+    container_name: zuul-gateway
+    #    restart: always
+    environment:
+      - dubbo.registry.address=nacos://nacos-server:8848
+      - spring.cloud.nacos.discovery.server-addr=nacos-server:8848
+      - spring.cloud.nacos.config.server-addr=nacos-server:8848
+    ports:
+      - "19999:8080"
+    depends_on:
+      - "nacos"
