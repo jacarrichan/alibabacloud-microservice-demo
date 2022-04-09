@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 java \
   -Dcom.sun.management.jmxremote.port=19991 \
