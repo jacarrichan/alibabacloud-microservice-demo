@@ -15,7 +15,11 @@
         <module>paymentservice-api</module>
         <module>paymentservice-provider</module>
     </modules>
-
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <maven.compiler.encoding>UTF-8</maven.compiler.encoding>
+    </properties>
     <build>
         <plugins>
             <plugin>
