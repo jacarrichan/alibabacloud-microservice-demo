@@ -14,7 +14,7 @@ import javax.annotation.PostConstruct;
 @RestController
 public class DemoConsumerController {
 
-    @Reference(application = "${dubbo.application.id}", registry = "edas")
+    @Reference(application = "${dubbo.application.id}", registry = "edas",check = false)
     private IHelloService demoService;
 
     @RequestMapping("/sayHello/{name}")

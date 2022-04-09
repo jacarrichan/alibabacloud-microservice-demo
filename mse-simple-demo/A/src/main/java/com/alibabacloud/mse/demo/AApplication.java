@@ -41,7 +41,7 @@ public class AApplication {
         return new RestTemplate();
     }
 
-    @Reference(application = "${dubbo.application.id}", version = "1.0.0")
+    @Reference(application = "${dubbo.application.id}", version = "1.0.0",check = false)
     private HelloServiceB helloServiceB;
 
     @Api(value = "/", tags = {"入口应用"})

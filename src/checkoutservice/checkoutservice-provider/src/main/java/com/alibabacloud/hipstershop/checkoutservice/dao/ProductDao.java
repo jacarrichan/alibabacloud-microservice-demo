@@ -14,7 +14,7 @@ import java.util.List;
  */
 @Service
 public class ProductDao {
-    @Reference(version = "1.0.0")
+    @Reference(version = "1.0.0", check = false)
     private ProductService productService;
 
     public List<ProductItem> confirmInventory(List<ProductItem> productItems) {
